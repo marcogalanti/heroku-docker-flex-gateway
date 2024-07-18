@@ -22,12 +22,10 @@ The author of this article makes any warranties about the completeness, reliabil
 5. Click the Heroku button below to deploy Flex Gateway on Heroku and fill in the required variables
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 6. The Flex Gateway created will appear under MuleSoft Anypoint > Runtime Manager > Flex Gateways and its status will be displayed as Connected. Clicking on it, under the **APIs** item on the left menu, it will be possible to create the APIs to be associated with it (“**Add API**” button).
-7. As the Downstream Port of the API enter **2020** - it should match the value used for the **FLEX_DYNAMIC_PORT_VALUE** environment variable of your Heroku Flex Gateway app
-8. Go under your Heroku app **Settings** tab and copy your app domain name (close to “Your app can be found at”), append to this URL your API Base path (if configured) and open the resulting link (e.g. with curl) - you should be redirected to the configured Upstream URL
+7. Go under your Heroku app **Settings** tab and copy your app domain name (close to “Your app can be found at”), append to this URL your API Base path (if configured) and open the resulting link (e.g. with curl) - you should be redirected to the configured Upstream URL
 
 ## Implementation Notes
-- a sidecar envoy TCP proxy is used to forward the Heroku connections on $PORT to the Flex Gateway envoy proxy listening on $FLEX_DYNAMIC_PORT_VALUE
-- to avoid ports clashing between $PORT and the Flex Gateway internal services using 127.0.0.1 interface and several ports (4000,9998,9999,15001,15002,15100), the interface used by the sidecar envoy proxy to listen on $PORT is not 0.0.0.0
+- Until the FlexGateway is not configured with an API you may see the dyno restarting with a similar log message "Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch"
 
 ## Additional Notes
 - Tested with an API having an "IP Allowlist" policy
@@ -56,8 +54,7 @@ This package has been tested using the following:
 | Heroku Common Runtime       |  -            |
 | Heroku Private Space        |     -         |
 | MuleSoft CloudHub Anypoint  | -             | 
-| Flex Gateway Docker image   | 1.6.0         | 
-| Docker desktop              | 4.21.1        | 
+| Flex Gateway Docker image   | 1.7.1         | 
 
 
 ## Credits
