@@ -4,7 +4,6 @@
   "repository": "https://github.com/garciarodrigor/heroku-docker-flex-gateway-example",
   "keywords": ["flex", "gateway", "mulesoft", "docker", "proxy", "heroku"],
   "stack": "container",
-  "image": "mulesoft/flex-gateway:1.7.1",
   "website": "https://docs.mulesoft.com/gateway/flex-gateway-overview",
   "env": {
     "FLEX_CONFIG": {
