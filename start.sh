@@ -7,14 +7,14 @@ echo "configuring Heroku Key-Value Store as shared storage for Flex Gateway ..."
 #This regular expression is used to parse and extract information from a PostgreSQL database connection string in the format "rediss://user:password@host:port".
 #
 # - "^rediss://" is the starting point of the string, indicating that it begins with the protocol "rediss://".
-# - "([^:]+)" captures any characters that are not a colon ":" one or more times, representing the username in the connection string.
+# - "([^:]*)" captures any characters that are not a colon ":" zero or more times, representing the username in the connection string.
 # - "([^@]+)" captures any characters that are not an "@" symbol one or more times, representing the password in the connection string.
 # - "@([^:]+)" captures any characters that are not a colon ":" after the "@" symbol, representing the host or server address in the connection string.
 # - "([^/]+)" captures any characters that are not a forward slash "/" one or more times, representing the port number in the connection string.
 
 # assuming the add-on URL is the default REDIS_URL
 
-regex="^rediss://([^:]+):([^@]+)@([^:]+):([^/]+)"
+regex="^rediss://([^:]*):([^@]+)@([^:]+):([^/]+)"
 if [[ $REDIS_URL =~ $regex ]]; then
 
 export REDIS_USER=${BASH_REMATCH[1]}
