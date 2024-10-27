@@ -31,17 +31,17 @@ cat << EOF > ${FG_CONFIG_SHARED_STORAGE_FILE}
 apiVersion: gateway.mulesoft.com/v1alpha1
 kind: Configuration
 metadata:
-name: shared-storage-redis
+    name: shared-storage-redis
 spec:
-sharedStorage:
-redis:
-    address: ${REDIS_HOST}:${REDIS_PORT}
-    username: ${REDIS_USER}
-    password: ${REDIS_PASSWORD}
-    tls:
-        skipValidation: true
-        minVersion: "1.1"
-        maxVersion: "1.3"
+    sharedStorage:
+        redis:
+            address: ${REDIS_HOST}:${REDIS_PORT}
+            username: ${REDIS_USER}
+            password: ${REDIS_PASSWORD}
+            tls:
+                skipValidation: true
+                minVersion: "1.1"
+                maxVersion: "1.3"
 EOF
 
 echo "Configuration file ${FG_CONFIG_SHARED_STORAGE_FILE} created successfully"
