@@ -29,7 +29,7 @@ The author of this article makes any warranties about the completeness, reliabil
 
 ## Additional Notes
 - Tested with an API having an "IP Allowlist" policy
-- Tested with an API having a "Rate Limiting" policy - this requires [Heroku Data for Redis](https://devcenter.heroku.com/articles/heroku-redis) add-on and a specifc YAML configuration file under the /config directory (e.g. shared-storage-redis.configuration.yaml)
+- Tested with an API having a "Rate Limiting" policy - this requires [Heroku Key-Value Store](https://devcenter.heroku.com/articles/heroku-redis) add-on. Dockerfile has been modified to use a specifc YAML configuration file (e.g. shared-storage-redis.configuration.yaml) created using a startup script (/start.sh)
 ```term
 apiVersion: gateway.mulesoft.com/v1alpha1
 kind: Configuration

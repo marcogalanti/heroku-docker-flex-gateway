@@ -42,7 +42,6 @@ spec:
     minVersion: "1.1"
     maxVersion: "1.3"
 EOF
-
         echo "Configuration file ${FG_CONFIG_SHARED_STORAGE_FILE} created successfully"
     fi
 fi
