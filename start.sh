@@ -5,7 +5,7 @@ set -e
 if [ -v REDIS_URL ]; then
     echo "configuring Heroku Key-Value Store as shared storage for Flex Gateway ..."
 
-    #This regular expression is used to parse and extract information from a PostgreSQL database connection string in the format "rediss://user:password@host:port".
+    #This regular expression is used to parse and extract information from Heroku Key-Value Store connection string in the format "rediss://user:password@host:port".
     #
     # - "^rediss://" is the starting point of the string, indicating that it begins with the protocol "rediss://".
     # - "([^:]*)" captures any characters that are not a colon ":" zero or more times, representing the username in the connection string.
