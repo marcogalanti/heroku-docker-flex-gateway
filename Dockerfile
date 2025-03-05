@@ -1,4 +1,4 @@
-FROM mulesoft/flex-gateway:1.7.1
+FROM mulesoft/flex-gateway:1.8.3
 
 ADD start.sh /start.sh
 CMD ["/start.sh"]
